@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+</head>
+<body>
+
+		<div class="header">
+				<img src="assets/images/crystal.logo.png">
+		</div>
+
+		<div id="container">
+
+					<div class="instuctions">
+							<p>You will be given a random number at the start of the game.
+									<br>
+									<br>
+							There are three crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+									<br>
+									<br>
+							You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
+									<br>
+									<br>
+							The value of each crystal is hidden from you until you click on it.
+									<br>
+									<br>
+							Each time when the game starts, the game will change the values of each crystal.</p>
+				
+					</div>
+
+					<div class="game_number">
+
+							<p class="total"></p>
+				
+					</div>
+
+					<div class="wins_losses">
+							<p> Your total score is: </p>
+							<p class="score"></p>
+
+				
+					</div>
+
+					<div class="images">
+
+					<img src="assets/images/green.png" class="click" id="green">
+					<img src="assets/images/red.png" class="click" id="red">
+					<img src="assets/images/purple.png" class="click" id="purple">
+									
+					</div>
+
+					<div class="total_score">
+							<p> Wins:<div id="wins"></div></p>
+		
+								<p>Losses:<div id="losses"></div>
+							</p>
+					</div>
+
+		</div>
+<script type="text/javascript" src="assets/javascript/game.js">
+	
+</script>
+
+
+</body>
+</html>

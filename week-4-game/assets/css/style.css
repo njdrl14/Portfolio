@@ -1,0 +1,125 @@
+body {
+	background-color: black;
+	background-image: url("../images/use_your_illusion.png");
+}
+
+.header {
+	background-color: #b3cdee;
+    height: 170px;
+    width: 900px;
+    margin-right: 90px;
+    margin-left: 120px;
+    background-image: url(http://www.vectortiles.com/wp-content/uploads/triangle-patterns-05-600x600.jpg);
+    border: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: goldenrod;
+}
+
+
+
+#container {
+    background-color: #003a64;
+    height: 495px;
+    width: 955px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    border: 2px;
+    border-style: solid;
+    border-color: goldenrod;
+    border-radius: 5px;
+}
+
+.instuctions {
+    background-color: #fafa93;
+    height: 405px;
+    width: 400px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.instructions, p {
+    font-family: exo;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: orangered;
+    font-weight: bold;
+}
+
+.game_number {
+    background-color: #fafa93;
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 10px;
+    left: 460px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    color: orangered;
+}
+
+.wins_losses {
+    background-color: #fafa93;
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 10px;
+    left: 720px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+div#wins {
+    position: absolute;
+    top: 18px;
+    left: 60px;
+    font-family: exo;
+    color: orangered;
+    font-weight: bold;
+}
+
+div#losses {
+    position: absolute;
+    top: 55px;
+    left: 70px;
+    font-family: exo;
+    color: orangered;
+    font-weight: bold;
+}
+
+.images {
+    background-color: #003a64;
+    height: 120px;
+    width: 400px;
+    position: absolute;
+    top: 120px;
+    left: 500px;
+}
+
+.total_score {
+    height: 100px;
+    width: 460px;
+    position: absolute;
+    top: 266px;
+    left: 460px;
+    background-color: #fafa93;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.score p {
+    font-size: x-large;
+}
