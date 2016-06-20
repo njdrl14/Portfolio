@@ -1,0 +1,58 @@
+button, div, form, input {
+			margin: 10px;
+		}
+body {
+	background-color: #1C4A5B;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    padding-top: 10px;
+    margin: 40px 0 20px;
+    border-bottom: 3px solid #eee;
+    border-radius: 5px;
+    text-align: center;
+	margin-top: 0px;
+    background-color: #13213D;
+}
+
+h1 {
+    font-size: 54px;
+    color: white;
+}
+
+form#sports-list {
+    float: right;
+}
+
+button.sport_button {
+    background-color: #576277;
+    color: white;
+    font-family: Roboto;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: white;
+}
+
+input#addSport {
+	background-color: #576277;
+    color: white;
+    font-family: Roboto;
+    border-radius: 5px;
+    font-weight: bold;
+}

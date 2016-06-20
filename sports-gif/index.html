@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sports GIF Search</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<!--main header-->
+		<div class="page-header">
+  			<h1>Sports GIF Search<span class="glyphicon glyphicon-search"> </span></h1>
+		</div>
+
+		<!--Where new buttons will be displayed-->
+		<div id="button_display">
+		</div>
+		<!--Adds a new button to be displayed-->
+		<form id="sports-list">
+			<label for="sports-input"> Add a Sport</label>
+			<input type-"text" id="sports-input"><br>
+
+			<input id="addSport" type="submit" value="Submit">
+		</form>
+		<!--Where GIFS will be displayed-->
+		<div id="sportsDisplay"></div>
+		</div>
+
+	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+	<script type="text/javascript">
+	//BRANDON- This is where I think im having trouble.
+	//First buttons on home screen
+		var sports = ['Baseball', 'Basketball', 'Football'];
+		
+		function sportDisplay(){
+			var sport = $(this).attr('data-name');
+			var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + sport + '&api_key=dc6zaTOxFJmzC&limit=10';
+
+			$.ajax({url: queryURL,method:'GET'}).done(function(response){
+
+					var sportsDiv = $('<div class="sports_holder">');
+
+					//puts GIF above previous GIFS
+					$('#sportDisplay').prepend(sportsDiv);
+					});
+		}
+
+		//========================================================================
+		//Button Javascript
+		function renderButtons(){
+			$('#button_display').empty();
+
+			for (var i =0; i < sports.length; i++){
+
+				var a = $('<button>')
+				a.addClass('sport_button');
+				a.attr('data-name', sports[i]);
+				a.text(sports[i]);
+				$('#button_display').append(a);
+
+			}
+		}
+	//=========================================================================================
+		
+		// adds sports button to array
+		$('#addSport').on('click', function(){
+
+			var sport = $('#sports-input').val().trim();
+			sports.push(sport);
+
+			renderButtons();
+
+			return false;
+		})
+		$(document).on('click', 'sport', sportDisplay);
+		renderButtons();
+
+	</script>
+
+</body>
+</html>
