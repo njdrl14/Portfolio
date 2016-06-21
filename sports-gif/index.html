@@ -39,46 +39,46 @@
 		function sportDisplay(){
 			var sport = $(this).attr('data-name');
 			var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + sport + '&api_key=dc6zaTOxFJmzC&limit=10';
-
 			$.ajax({url: queryURL,method:'GET'}).done(function(response){
-
+			
 			var sportsDiv = $('<div class="sports_holder">');
 
+			for (var i = 0; i < response.data.length; i++) {
+				
+
+				var obj = response.data[i];
+				sportsDiv.prepend('<img src="'+obj.images.fixed_width.url+'">')
+			}
+			
+
+
 			//puts GIF above previous GIFS
-			$('#sportDisplay').prepend(sportsDiv);
+			$('#sportsDisplay').prepend(sportsDiv);
 			});
 		}
-
 		//========================================================================
 		//Button Javascript
 		function renderButtons(){
 			$('#button_display').empty();
-
 			for (var i =0; i < sports.length; i++){
-
 				var a = $('<button>')
 				a.addClass('sport_button');
 				a.attr('data-name', sports[i]);
 				a.text(sports[i]);
 				$('#button_display').append(a);
-
 			}
 		}
 	//=========================================================================================
 		
 		// adds sports button to array
 		$('#addSport').on('click', function(){
-
 			var sport = $('#sports-input').val().trim();
 			sports.push(sport);
-
 			renderButtons();
-
 			return false;
 		})
-		$(document).on('click', 'sport', sportDisplay);
+		$(document).on('click', '.sport_button', sportDisplay);
 		renderButtons();
-
 	</script>
 
 </body>
