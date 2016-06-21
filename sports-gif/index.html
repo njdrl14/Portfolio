@@ -32,22 +32,35 @@
 
 	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
 	<script type="text/javascript">
-	//BRANDON- This is where I think im having trouble.
+	
 	//First buttons on home screen
 		var sports = ['Baseball', 'Basketball', 'Football'];
 		
+		//This function creates the gifs to appear
 		function sportDisplay(){
 			var sport = $(this).attr('data-name');
-			var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + sport + '&api_key=dc6zaTOxFJmzC&limit=10';
+			//This is the URL we need to link the API to our page
+			var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + sport + '&api_key=dc6zaTOxFJmzC&limit=10';//NOTICE- at the end of the api key i added 
+												 //"&limit=10" this will allow only 10 Gifs to be 
+												 //displayed at a time.
+
+			//this is the ajax call that takes the 
 			$.ajax({url: queryURL,method:'GET'}).done(function(response){
-			
+
+			//this is a div where the GIFS will be held in
 			var sportsDiv = $('<div class="sports_holder">');
 
+			//this for loop goes through the data array that holds all the GIFS pm the giphy site.
+			//so it picks random Gifs to be generated
 			for (var i = 0; i < response.data.length; i++) {
 				
-
+				//the var obj makes a call(response) to the data array
+				//then prepends the sports div above to the html, 
+				//into a img tag and then goes through all the objects to get the giphy url
+				//this part is essential to make the GIFS appear
 				var obj = response.data[i];
-				sportsDiv.prepend('<img src="'+obj.images.fixed_width.url+'">')
+				$('sportsDisplay').empty();
+				sportsDiv.prepend('<img class"sports-image" src="'+obj.images.fixed_width.url+'">')
 			}
 			
 
@@ -77,6 +90,19 @@
 			renderButtons();
 			return false;
 		})
+		//Trying to get GIFS to pause on click
+		/*$(document).on('click', '.sports-image', function(){
+			var state = $(this).data('state');
+			if(state == 'still'){
+				$(this).attr('src', $(this).data('animate'));
+				$(this).data('state', 'animate');
+				}else{
+					$(this).attr('src', $(this).data('still'));
+					$(this).data('state', 'still');
+				}
+			
+		});*/
+
 		$(document).on('click', '.sport_button', sportDisplay);
 		renderButtons();
 	</script>
