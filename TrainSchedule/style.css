@@ -1,0 +1,40 @@
+body {
+	background-color: #9D9C9C;
+}
+
+.glyphicon-road:before {
+    content: "\e024";
+    color: white;
+    font-size: 50px;
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #3F3D3D;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.panel-body {
+    padding: 15px;
+    background-color: #8B7A76;
+    color: white;
+}
+
+.panel-default>.panel-heading {
+    color: white;
+    background-color: #8B7A76;
+    border-color: #ddd;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: whitesmoke;
+}
